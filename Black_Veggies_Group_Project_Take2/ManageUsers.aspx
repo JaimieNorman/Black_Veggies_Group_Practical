@@ -66,6 +66,14 @@
             <td>
                 <asp:Button ID="btnPassword" runat="server" Text="Update" class="btn-danger" ValidationGroup="group2" OnClick="btnPassword_Click"/>
             </td>
+            </tr>
+        <tr>
+            <td>
+                <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" ValidationGroup="group2"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td>
