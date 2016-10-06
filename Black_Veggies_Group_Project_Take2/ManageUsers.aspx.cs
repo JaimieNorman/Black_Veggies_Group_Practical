@@ -13,10 +13,10 @@ namespace Black_Veggies_Group_Project_Take2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["Admin"] == null && Session["User"] == null)
-            //{
-            //    Response.Redirect("./Home.aspx");
-            //}
+            if (Session["Admin"] == null && Session["User"] == null)
+            {
+                Response.Redirect("./Home.aspx");
+            }
             if (!Page.IsPostBack)
             {
                 populateUserDropDownList();
