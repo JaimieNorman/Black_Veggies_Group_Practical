@@ -64,9 +64,14 @@
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" style="margin-right: 10px;"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="btnPassword" runat="server" Text="Update" class="btn-danger" ValidationGroup="group2" OnClick="btnPassword_Click"/>
+                
             </td>
             </tr>
+        <tr>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter something" ForeColor="Red" ValidationGroup="group2" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
         <tr>
             <td>
                 <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:"></asp:Label>
@@ -74,13 +79,17 @@
             <td>
                 <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" ValidationGroup="group2"></asp:TextBox>
             </td>
+            <td>
+                <asp:Button ID="btnPassword" runat="server" Text="Update" class="btn-danger" ValidationGroup="group2" OnClick="btnPassword_Click"/>
+            </td>
         </tr>
         <tr>
             <td>
                 
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter something" ForeColor="Red" ValidationGroup="group2" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+                &nbsp;
+                <asp:Label ID="lblMatchPasswords" runat="server" Text="" ForeColor="Red"></asp:Label>
             </td>
         </tr>
         <tr>

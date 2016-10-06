@@ -13,36 +13,38 @@ namespace Black_Veggies_Group_Project_Take2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Admin"] == null && Session["User"] == null)
+            //if (Session["Admin"] == null && Session["User"] == null)
+            //{
+            //    Response.Redirect("./Home.aspx");
+            //}
+            if (!Page.IsPostBack)
             {
-                Response.Redirect("./Home.aspx");
-            }
+                populateUserDropDownList();
 
-            populateUserDropDownList();
+                SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
+                string commandString = "select [UserID], [Username], [Email], [Firstname], [Surname] from [User]";
+                SqlCommand command = new SqlCommand(commandString, connection);
+                command.CommandType = CommandType.Text;
+                connection.Open();
 
-            SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
-            string commandString = "select [UserID], [Username], [Email], [Firstname], [Surname] from [User]";
-            SqlCommand command = new SqlCommand(commandString, connection);
-            command.CommandType = CommandType.Text;
-            connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
 
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    lblContent.Text += "<tr> <td>" + reader["UserID"] + "</td>";
-                    lblContent.Text += "<td>" + reader["Username"] + "</td>";
-                    lblContent.Text += "<td>" + reader["Email"] + "</td>";
-                    lblContent.Text += "<td>" + reader["Firstname"] + "</td>";
-                    lblContent.Text += "<td>" + reader["Surname"] + "</td>";
+                    while (reader.Read())
+                    {
+                        lblContent.Text += "<tr> <td>" + reader["UserID"] + "</td>";
+                        lblContent.Text += "<td>" + reader["Username"] + "</td>";
+                        lblContent.Text += "<td>" + reader["Email"] + "</td>";
+                        lblContent.Text += "<td>" + reader["Firstname"] + "</td>";
+                        lblContent.Text += "<td>" + reader["Surname"] + "</td>";
+                    }
                 }
-            }
 
-            connection.Close();
-            connection.Dispose();
-            command.Dispose();
+                connection.Close();
+                connection.Dispose();
+                command.Dispose();
+            }
         }
 
         private void populateUserDropDownList()
@@ -85,19 +87,27 @@ namespace Black_Veggies_Group_Project_Take2
 
         protected void btnPassword_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
-            string commandString = "update [User] set [Password]=@Password where UserID=" + ddlUser.SelectedValue;
-            SqlCommand command = new SqlCommand(commandString, connection);
-            command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@Password", PasswordHasher.HashPassword(txtPassword.Text));
-            connection.Open();
+            if (txtPassword.Text == txtConfirmPassword.Text)
+            {
+                SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
+                string commandString = "update [User] set [Password]=@Password where UserID=" + ddlUser.SelectedValue;
+                SqlCommand command = new SqlCommand(commandString, connection);
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@Password", PasswordHasher.HashPassword(txtPassword.Text));
+                connection.Open();
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
 
-            connection.Close();
-            connection.Dispose();
-            command.Dispose();
-            Response.Redirect("./ManageUsers.aspx");
+                connection.Close();
+                connection.Dispose();
+                command.Dispose();
+                Response.Redirect("./ManageUsers.aspx");
+            }
+            else
+            {
+                lblMatchPasswords.Text = "Passwords do not match!";
+            }
+            
         }
 
         protected void btnEmail_Click(object sender, EventArgs e)
