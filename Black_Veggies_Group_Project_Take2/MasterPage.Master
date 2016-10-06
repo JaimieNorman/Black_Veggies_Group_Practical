@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Black_Veggies_Group_Project_Take2.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body>
+     <!-- Nav Section -->
+    <nav class="navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-nav" href="#">
+                    <img src="./img/download.jpg" alt="" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right margin-top">
+                    <li>
+                        <a href="./Home.aspx">Shop</a>
+                    </li>
+                    <li>
+                        <a href="./Specials.aspx">Weekly Specials</a>
+                    </li>
+                    <li>
+                        <a href="./SpecialRequests.aspx">Special Orders</a>
+                    </li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" runat="server" visible="false" id="adminLink"><i class="fa fa-user" aria-hidden="true"></i> Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./ManageUsers.aspx" id="userManagementLink" runat="server" >Manage Users</a></li>
+                            <li><a href="./ManageAdmin.aspx" id="adminManagementLink" runat="server" >Manage Admins</a></li>
+                            <li><a href="./ManageProduct.aspx" id="productManagementLink" runat="server" visible="false">Manage Product</a></li>
+                            <li><a href="./ProductAddition.aspx" id="productAdditionLink" runat="server">Add Product</a></li>
+                        </ul>
+                    </li>s
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../Register.aspx" id="registerLink" runat="server">Register</a></li>
+                            <li><a href="../UserLogin.aspx" id="signInLink" runat="server">Sign In</a></li>
+                            <li><a href="../AccountManagement.aspx" id="managementLink" runat="server">Account Management</a></li>
+                            <li><a href="../Logout.aspx" id="logoutLink" runat="server" visible="false">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> Cart<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">View/Edit Cart</a></li>
+                                <li><a href="#">Checkout</a></li>
+                            </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+      
+    </nav>
+     <!--End Nav Section -->
+
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+  
+    <div class="footer navbar-fixed-bottom" style="margin-left: 30px; margin-right: 30px;">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>© 2016 BlackVeggies Brand, Inc.</p>
+     </div>
+
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

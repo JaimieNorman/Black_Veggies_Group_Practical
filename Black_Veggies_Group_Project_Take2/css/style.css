@@ -1,0 +1,79 @@
+/* ========================================
+	GENERAL STYLES
+	======================================   */
+
+body {
+    margin-top: 70px;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+a:hover,
+a:focus {
+    color: #00ff21;
+    text-decoration: none;
+    outline: none;
+}
+
+.mr-botm {
+    margin-bottom: 50px;
+}
+
+.mr-top-50 {
+    margin-top: 50px;
+}
+/* ========================================
+	BOOTSTRAP STYLE CHANGES
+	======================================   */
+.navbar-brand {
+    height: 70px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: white;
+}
+
+
+/* ========================================
+	CAROUSEL STYLE 
+	======================================   */
+
+
+.carousel {
+    min-height: 300px;
+    margin-bottom: 30px;
+}
+
+.carousel-caption {
+    z-index: 10;
+}
+
+
+.carousel .item {
+    min-height: 300px;
+    background-color: #68c4f6;
+}
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 300px;
+}
+
+/*.carousel-caption {
+    text-shadow: none;
+}*/
+
+.thumbnail > img, .thumbnail a > img {
+    display: block;
+    /* max-width: 100%; */
+    width: 250px !important;
+    height: 300px !important;
+    max-height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

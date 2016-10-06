@@ -1,0 +1,8 @@
+﻿.beta td, .beta th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.alpha td, .alpha th {
+    padding: 5px;
+}
