@@ -69,6 +69,9 @@
             </tr>
         <tr>
             <td>
+                
+            </td>
+            <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter something" ForeColor="Red" ValidationGroup="group2" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
             </td>
         </tr>
