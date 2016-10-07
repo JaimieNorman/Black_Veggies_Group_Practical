@@ -19,42 +19,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-   
-     <!-- Nav Section -->
-    <nav class=" navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand logo-nav" href="http://www.binarytheme.com">
-                    <img src="img/logo.png" alt="">
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right margin-top">
-                    <li><a href="#">Men</a>
-                    </li>
-                    <li><a href="#">Women</a>
-                    </li>
-                    <li><a href="#">Kids</a>
-                    </li>
-                    <li><a href="#">Offers</a>
-                    </li>
-                  
-                    <li><a href="#">Cart</a>
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-      
-    </nav>
-     <!--End Nav Section -->
      <!-- Carousel Section -->
     
      <!--End Carousel Section -->
@@ -68,14 +32,6 @@
                     </a>
                  <h3>QUICK OVERVIEW OF ITEM</h3>
                 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -83,14 +39,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
-                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
+               
             </div>
             <div class="col-md-4 col-sm-4 mr-top-50">
                 <h3>Project Details</h3>
@@ -98,53 +47,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
-                <h3>Links Below</h3>
-                <ul>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                </ul>
-                <p>
-                    <a href="#" class="btn btn-primary btn-lg" role="button">BUY NOW @ $ 500</a> 
+                <p>                
+                    <asp:Label ID="lblQuantity" runat="server" Text="Quantity:"></asp:Label>
+                    <asp:TextBox ID="txtQuantity" runat="server" Width="25px"></asp:TextBox> <br />
+                    <a href="#" class="btn btn-primary btn-sm role="button" style="margin-top: 10px;">Add to cart</a>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please enter a quantity" ForeColor="Red" ControlToValidate="txtQuantity"></asp:RegularExpressionValidator>
                 </p>
             </div>
           
             </div>
-           <!-- /.row -->
-        <div class="row">
-            <h3 style="margin-left:30px;">Related Items Here</h3>
-            <hr />
-            <div class="col-md-3 col-sm-3 text-center">
-                <a href="#" >
-                    
-                <img  src="img/imgS1.jpg" class="img-responsive">
-                   
-                    </a>
-                <h4>Item Name Here</h4>
-            </div>
-            <div class="col-md-3 col-sm-3 text-center">
-                <a href="#" >
-                <img  src="img/imgS2.jpg" class="img-responsive">
-                    </a>
-                 <h4>Item Name Here</h4>
-            </div>
-           <div class="col-md-3 col-sm-3 text-center">
-                <a href="#" >
-                <img  src="img/imgS1.jpg" class="img-responsive">
-                    </a>
-                <h4>Item Name Here</h4>
-            </div>
-           <div class="col-md-3 col-sm-3 text-center">
-                <a href="#" >
-                <img  src="img/imgS2.jpg" class="img-responsive">
-                    </a>
-                <h4>Item Name Here</h4>
-            </div>
-            </div>
-        <!-- /.row -->
-
-    </div>
+       </div>
    <!--End Products Section -->
 
     <!-- JavaScript -->
