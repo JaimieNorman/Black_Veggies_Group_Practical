@@ -18,28 +18,31 @@ namespace Black_Veggies_Group_Project_Take2
                 Response.Redirect("./Home.aspx");
             }
 
-            populateDropDownList();
-
-            SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
-            string commandString = "select AdminID, Username from [Admin]";
-            SqlCommand command = new SqlCommand(commandString, connection);
-            command.CommandType = CommandType.Text;
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if (!Page.IsPostBack)
             {
-                while (reader.Read())
-                {
-                    lblContent.Text += "<tr> <td>" + reader["AdminID"] + "</td>";
-                    lblContent.Text += "<td>" + reader["Username"] + "</td>";
-                }
-            }
+                populateDropDownList();
 
-            connection.Close();
-            connection.Dispose();
-            command.Dispose();
+                SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
+                string commandString = "select AdminID, Username from [Admin]";
+                SqlCommand command = new SqlCommand(commandString, connection);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        lblContent.Text += "<tr> <td>" + reader["AdminID"] + "</td>";
+                        lblContent.Text += "<td>" + reader["Username"] + "</td>";
+                    }
+                }
+
+                connection.Close();
+                connection.Dispose();
+                command.Dispose();
+            } 
         }
 
         protected void btnUsername_Click(object sender, EventArgs e)
@@ -83,19 +86,27 @@ namespace Black_Veggies_Group_Project_Take2
 
         protected void btnPassword_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
-            string commandString = "update [Admin] set [Password]=@Password where AdminID=" + ddlAdmin.SelectedValue;
-            SqlCommand command = new SqlCommand(commandString, connection);
-            command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@Password", PasswordHasher.HashPassword(txtPassword.Text));
-            connection.Open();
+            if (txtPassword.Text == txtConfirmPassword.Text)
+            {
+                SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);
+                string commandString = "update [Admin] set [Password]=@Password where AdminID=" + ddlAdmin.SelectedValue;
+                SqlCommand command = new SqlCommand(commandString, connection);
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@Password", PasswordHasher.HashPassword(txtPassword.Text));
+                connection.Open();
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
 
-            connection.Close();
-            connection.Dispose();
-            command.Dispose();
-            Response.Redirect("./ManageAdmin.aspx");
+                connection.Close();
+                connection.Dispose();
+                command.Dispose();
+                Response.Redirect("./ManageAdmin.aspx");
+            }
+            else
+            {
+                lblConfirmPasswordError.Text = "Passwords do not match!";
+            }
+            
         }
     }
 }
