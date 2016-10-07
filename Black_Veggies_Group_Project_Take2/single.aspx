@@ -9,7 +9,6 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Free ASP .NET E-commerce Template by binarytheme</title>
 
     <!-- Bootstrap  CSS -->
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -27,25 +26,19 @@
          
         <div class="row">
             <div class="col-md-8 col-sm-8 mr-top-50">
-                <a href="#" >
                 <img  src="img/portfolio1.jpg" class="img-responsive mr-botm">
-                    </a>
-                 <h3>QUICK OVERVIEW OF ITEM</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-               
             </div>
             <div class="col-md-4 col-sm-4 mr-top-50">
-                <h3>Project Details</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <h3>Product Name</h3>
+                <p>
+                    Description
+                </p>
+                <h3>Product Details</h3>
+                <p>
+                    Stock:
+                    Type:
+                    Price:
+                    etc...
                 </p>
                 <p>                
                     <asp:Label ID="lblQuantity" runat="server" Text="Quantity:"></asp:Label>
