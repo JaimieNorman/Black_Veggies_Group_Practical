@@ -38,12 +38,16 @@ namespace Black_Veggies_Group_Project_Take2
             if (temp == 1)
             {
                 connection.Open();
-                string checkPassword = "select Password from [User] where Username = '" + txtUsername.Text + "'";
+                string checkPassword = "select * from [User] where Username = '" + txtUsername.Text + "'";
                 SqlCommand passwordCommand = new SqlCommand(checkPassword, connection);
-                string password = passwordCommand.ExecuteScalar().ToString();
-                if (password == PasswordHasher.HashPassword(txtPassword.Text))
+                SqlDataReader reader;
+                reader = passwordCommand.ExecuteReader();
+//                string password = passwordCommand.ExecuteScalar().ToString();
+                reader.Read();
+                if (reader["Password"].ToString() == PasswordHasher.HashPassword(txtPassword.Text))
                 {
                     Session["User"] = txtUsername.Text;
+                    Session["UserID"] = reader["UserID"];
                     Response.Redirect("./Home.aspx");
                     connection.Close();
                 }

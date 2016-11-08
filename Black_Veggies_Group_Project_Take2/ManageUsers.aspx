@@ -3,7 +3,7 @@
     <link href="css/styleTable.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-left: auto; margin-right: auto; text-align: center;">
+    <div style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 150px;">
         <h1>Edit User details</h1>
     </div>
     <table style="margin: 0 auto;" class="beta">

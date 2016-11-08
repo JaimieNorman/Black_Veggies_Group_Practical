@@ -54,7 +54,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../Register.aspx" id="registerLink" runat="server">Register</a></li>
                             <li><a href="../UserLogin.aspx" id="signInLink" runat="server">Sign In</a></li>
-                            <li><a href="../AccountManagement.aspx" id="managementLink" runat="server">Account Management</a></li>
+                            <li><a href="../AccountManagement.aspx" id="managementLink" runat="server" Visible="false">Account Management</a></li>
                             <li><a href="../Logout.aspx" id="logoutLink" runat="server" visible="false">Logout</a></li>
                         </ul>
                     </li>

@@ -3,7 +3,7 @@
     <link href="css/styleTable.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin-left: auto; margin-right: auto; text-align: center; margin-top: auto;">
+    <div style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 150px;">
         <h1>Edit Admin details</h1>
     </div>
     <table style="margin: 0 auto;" class="beta">
@@ -55,7 +55,8 @@
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" style="margin-right: 10px;"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td>

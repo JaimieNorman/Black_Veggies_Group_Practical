@@ -22,6 +22,8 @@ namespace Black_Veggies_Group_Project_Take2
             {
                 signInLink.Visible = false;
                 logoutLink.Visible = true;
+                registerLink.Visible = false;
+                managementLink.Visible = true;
             }
         }
     }

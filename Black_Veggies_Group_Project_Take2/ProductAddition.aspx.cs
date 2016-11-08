@@ -13,10 +13,10 @@ namespace Black_Veggies_Group_Project_Take2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["Admin"] == null)
-            //{
-            //    Response.Redirect("./AdminLogin.aspx");
-            //}
+            if (Session["Admin"] == null)
+            {
+                Response.Redirect("./AdminLogin.aspx");
+            }
 
             
             ListItem wine = new ListItem("Wine", "Wine");

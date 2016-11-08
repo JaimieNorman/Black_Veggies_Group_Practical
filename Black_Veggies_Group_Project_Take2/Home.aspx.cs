@@ -31,9 +31,9 @@ namespace Black_Veggies_Group_Project_Take2
                     lblProducts.Text += "<div class='thumbnail'>";
                     lblProducts.Text += "<img src='" + reader["ImageLocation"].ToString() + "' />";
                     lblProducts.Text += "<div class='caption'>";
-                    lblProducts.Text += "<h3>" + reader["Name"].ToString() + "</h3>";
+                    lblProducts.Text += "<h3>" + reader["Name"].ToString() + " - R" + reader["Price"] + "</h3>";
                     lblProducts.Text += "<p>" + reader["Description"].ToString() + "</p>";
-                    lblProducts.Text += "<p><a href='ProductDetails.aspx?=" + reader["ProductID"] + "' class='btn btn-primary' role='button'>Add to Cart</a> <a href='ProductDetails.aspx?=" + reader["ProductID"] + "'class='btn btn-danger' role='button'>See Details</a></p>";
+                    lblProducts.Text += "<p><a href='ProductDetails.aspx?=" + reader["ProductID"] + "' class='btn btn-primary' role='button'>Add to Cart</a> <a href='ProductDetails.aspx?id=" + reader["ProductID"] + "'class='btn btn-danger' role='button'>See Details</a></p>";
                     lblProducts.Text += "</div>";
                     lblProducts.Text += "</div></div>";
                 }
